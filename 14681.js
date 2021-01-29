@@ -1,14 +1,28 @@
-var fs = require('fs'); 
-var input = fs.readFileSync('data.txt').toString().split(' ');
-var x = parseInt(input[0]);
-var y = parseInt(input[1]);
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-if(x>0){
-    if(y>0){ console.log('1'); }
-    else{ console.log('4'); }
-}
-else{
-    if(y>0){ console.log('2'); }
-    else{ console.log('3'); }
-}
-process.exit();
+let input = [];
+rl.on('line', function (line) {
+  input.push(parseInt(line));
+}).on('close', function () {
+  const X = input[0];
+  const Y = input[1];
+
+  if (X > 0) {
+    if(Y > 0){
+        console.log(1);
+    }else {
+        console.log(4);
+    }
+  }else{
+      if( Y>0 ){
+        console.log(2);
+      } else {
+          console.log(3);
+      }
+  }
+  process.exit();
+});
