@@ -7,19 +7,20 @@ const rl = readline.createInterface({
 let input = [];
 
 rl.on('line', function (line) {
-  input.push(line.split(' '));
+  input.push(line);
 }).on('close', function () {
-  let Test_case = parseInt(input[0]);	// 테스트 케이스의 개수
+  let count = Number(input[0]);	// 테스트 케이스의 개수
   let numbers = [];
 
-  for (let i = 1; i <= Test_case; i++) {
-    numbers.push(input[i]);
+  // 테스트 케이스 개수만큼 각 케이스 배열 생성 후 numbers 배열에 할당
+  for (let i = 1; i <= count; i++) {
+    numbers.push(input[i].split(' '));
   }
-  for (let i = 0; i < Test_case; i++) {
-    const A = parseInt(numbers[i][0]);
-    const B = parseInt(numbers[i][1]);
+  for (let i = 0; i < count; i++) {
+    num1 = Number(numbers[i][0]);
+    num2 = Number(numbers[i][1]);
 
-    console.log(A+B);
+    console.log(num1 + num2);
   }
 	
   process.exit();
