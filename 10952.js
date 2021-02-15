@@ -10,15 +10,23 @@ rl.on('line', function (line) {
     input.push(line);
 }).on('close', function () {
     let num = [];
-    const i =0;
-    while(Number(num[i][0]) != 0 && Number(num[i][1] != 0))
+    let i =0;
+    let result = ''; 
+    let whil_e = true;
+    while(whil_e)
     {
-        i++
-        num1 = Number(num[i][0]);
-        num2 = Number(num[i][1]);
+        if (i !== 0) {
+            result += '\n';
+          }
+        num.push(input[i].split(' '));
+        sum = Number(num[i][0]) + Number(num[i][1]);
+        if(sum == 0){
+            whil_e =false;
+        }else{
+            result += sum;
+            i++;
+        }
     }
-
-
-    process.exit();
+    console.log(result);
 });
 
