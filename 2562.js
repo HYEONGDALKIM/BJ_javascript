@@ -5,7 +5,7 @@ const nums = input.split('\n').map(x => +x);
 
 let max = 0;
 let n =0;
-for(let i =1; i<nums.length; i++)
+for(let i =0; i<input.length; i++)
 {
     if(max < nums[i]){
         max = nums[i];
@@ -13,7 +13,8 @@ for(let i =1; i<nums.length; i++)
     }
     
 }
-console.log(max+'\n'+n);
+console.log(max);
+console.log(n);
 
 
 
